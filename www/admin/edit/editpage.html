@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="container">
+        <form name="myForm" enctype="multipart/form-data">
+            <h3>Page Details</h3>
+            <label>PageName:</label>
+            <div class="form-group">
+                <input type="text" name="pagename" ng-model="user.pagename"  class="form-control" placeholder="pagename" ng-pattern="/[aA-zZ\s]$/">
+            </div>
+            <div class="form-group">
+            <label>PageContent:</label><br>
+            <div style="text-align: right;">
+             <md-button class="md-button md-primary md-raised" ng-click = "useAccordion()" flex = "100"  flex-gt-lg = "100">Accordion</md-button></div>
+                <div text-angular ta-editor ng-model="user.pagecontent">
+                </div>
+            </div>
+            <div class="form-group" style="text-align: right;">
+                <button  class="btn btn-success" ng-disabled="isSubmitDisabled" ng-click="editPage()">Update</button>
+                <button  class="btn btn-danger" ng-click=cancel()>Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

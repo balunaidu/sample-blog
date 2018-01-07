@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="lib/angular-material/angular-material.css">
+    <!--  -->
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/lib/jquery.table2excel.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-material/angular-material.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--  -->
+    <!-- UI Bootstrap table -->
+    <script src="js/lib/ui-bootstrap-tpls-0.10.0.js"></script>
+    <!--  -->
+    <!-- Text Editor -->
+    <script src="js/lib/textAngular-rangy.min.js"></script>
+    <script src="js/lib/textAngular-sanitize.min.js"></script>
+    <script src="js/lib/textAngular.min.js"></script>
+    <!--  -->
+    <!-- App Js Files -->
+    <script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="admin/loginCtrl.js"></script>
+    <script src="admin/registerCtrl.js"></script>
+    <script src="admin/mainCtrl.js"></script>
+    <script src="admin/edit/editCtrl.js"></script>
+    <script src="allpages/pages/pagesCtrl.js"></script>
+    <script src="allpages/allpagesCtrl.js"></script>
+    <script src="admin/userdetails/userdetailsCtrl.js"></script>
+    <script src="allpages/contents/contentsCtrl.js"></script>
+    <script src="allpages/newpages/newpagesCtrl.js"></script>
+    <!-- Services -->
+    <script src="js/services/contentsService.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="mainCtrl">
+    <div class="wrapper container-fluid">
+      <div class="row">
+        <div class="NavBar col-md-12">
+            <nav>
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="color: white;">Content Management System</a>
+                </div>
+                <ul>
+                    <li><a ui-sref="pages" style="text-decoration: none;">Home</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown" ng-show="!isLoggedin">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AllPages<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="data in datas" ng-click="gotoContents(data)">{{data.pagename}}</li>
+                            </ul>
+                        </li>
+                        <li ng-show="isLoggedOut"><a ui-sref="allpages()">AllPages</a></li>
+                        <li ng-show="!isLoggedin"><a ui-sref="register">Register</a></li>
+                        <li ng-show="!isLoggedin"><a ui-sref="login">Login</a></li>
+                        <li ng-show="isAdmin && isLoggedOut"><a ng-click="userdetails()">UserDetails</a></li>
+                        <li ng-show="isLoggedOut"><a ng-click="logout()">Logout</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-fluid" ui-view>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

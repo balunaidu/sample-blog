@@ -1,0 +1,21 @@
+<div class="row">
+ <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4"></div>
+    <div class="container">
+<form>
+<h1 style="text-align:center;">Details of Page</h1>
+<div class="form-group">
+	<label>PageName:</label>
+	<input type="text" name="pagename" ng-model="user.pagename" class="form-control" placeholder="PageName">
+</div>
+<div class="form-group">
+	<label>PageContent:</label>
+	<textarea class="form-control" name="pagecontent" ng-model="user.pagecontent" class="form-control" rows="7" placeholder="PageContent"></textarea>
+</div>
+<div class="form-group">
+	<button class="btn btn-primary" ng-click="getPageDetails(user)">Update</button>
+	<button class="btn btn-danger" ng-click=cancel()>Cancel</button>
+
+</div>
+</form>
+</div>
+</div>

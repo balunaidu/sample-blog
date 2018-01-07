@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-sm-4 col-md-4 col-xs-12 col-lg-4"></div>
+	<div class="container">
+		<form name="myForm">
+			<h1 style="text-align:center;">Create New Page</h1>
+			<div class="form-group">
+				<label>PageName:</label>
+				<input type="text" name="pagename" ng-model="user.pagename" class="form-control" ng-change="isValid()" placeholder="PageName" ng-required="isRequires"> 
+			</div>
+			<div class="form-group">
+				<label>PageContent:</label>
+				</div>
+				<div text-angular ta-editor ng-model="user.pagecontent" >
+				</div>
+				<div layout="row" layout-align="space-between center">
+              <span flex="40">Upload Files</span>
+              <span flex="10">:</span>
+              <input flex="50" type="file" file-upload multiple>
+              <button class="btn btn-primary" ng-disabled="isSubmitDisabled" ng-click="uploadImage()">Upload</button>
+            </div>
+            <div>
+
+            	
+            </div>
+				<div class="form-group">
+					<button class="btn btn-primary" ng-disabled="isSubmitDisabled" ng-click="savePage(user)">Save</button>
+					<button class="btn btn-danger" ng-click=back()>Cancel</button>
+				</div>
+			</form>
+		</div>
+	</div>

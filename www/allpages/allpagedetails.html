@@ -1,0 +1,23 @@
+<div class="container-fluid"> 
+    <h3 class="text-center">Page Details </h3>
+    <div layout='row' layout-align="end center">
+        <md-button class="md-raised md-primary"  ng-click=addPages()>Add Page</md-button>
+        <md-button class="md-raised md-warn" ng-click=cancel()>Back</md-button>
+    </div>
+    <div class="table-responsive">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>PageName</th>
+                <th>View Page</th>
+            </tr>
+            <tr ng-repeat="data in datas">
+                <td>{{$index+1}}</td>
+                <td>{{data.pagename}}</td>
+                <td><a ng-show='isAdmin' class="md-button md-primary md-raised" ui-sref="editpage({ID:data.ID})">Edit</a><a class="md-button md-warn md-raised" ng-click="deletePage(data)"> Delete</a>
+                    <a class="md-button md-disabled md-raised" ui-sref="contents({ID:data.ID})"> Preview</a>
+                    <a  ui-sref="contents({ID:data.ID})">view</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

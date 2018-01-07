@@ -1,0 +1,24 @@
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-12 align-left ">
+        <md-button class="md-raised md-warn" ng-click=back()>Back</md-button>
+</div>
+    <div class="col-md-10 col-md-offset-2">
+            <h3>{{datas.pagename}}</h3>
+            <div class="col-md-6" ng-bind-html="datas.pagecontent">
+            </div>
+            <div class="col-md-6">
+            <img  ng-src="/uploads/images/{{datas.image}}">
+            </div>
+    </div>
+    <div class="col-md-12">
+        <form>
+        <md-input-container class="md-block">
+        <label>Email</label>
+         <textarea type="text" name="comment" ng-model="comment"></textarea>
+      </md-input-container>  
+            <md-button class="md-raised md-primary" ng-click="Comment(comment)">Comment</md-button>
+        </form>
+    </div>
+</div>
+</div>

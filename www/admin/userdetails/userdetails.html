@@ -1,0 +1,26 @@
+<div class="container-fluid">
+<h3>Users Detail</h3>
+<div layout='row' layout-align="end center">
+        <md-button class="md-raised md-warn" ng-click=export()>Export To Excel</md-button>
+        <md-button class="md-raised md-warn" ng-click=cancel()>Back</md-button>
+        </div>
+
+<table  id="export">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Modify</th>
+    </tr>
+    <tr ng-repeat="data in datas">
+        <td>{{$index+1}}</td>
+        <td>{{data.firstname}}</td>
+        <td>{{data.lastname}}</td>
+        <td>{{data.username}}</td>
+        <td>{{data.email}}</td>
+        <td><a class="md-button md-primary md-raised" ui-sref="editUser({taskID:data.ID})">edit</a><a class="md-button md-warn md-raised" ng-click="deleteUser(data)">Delete</a></td>
+	</tr>
+</table>
+</div>
